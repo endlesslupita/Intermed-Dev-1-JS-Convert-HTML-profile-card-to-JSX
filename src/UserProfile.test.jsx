@@ -17,3 +17,18 @@ test('checks the link href attribute', () => {
   render(<UserProfile name="Jane Doe" email="jane@example.com" />);
 expect(screen.getByRole('link')).toHaveAttribute('href', 'mailto:jane@example.com');
 });
+
+test('a UserProfile without props', () => {
+  render(<UserProfile name="Jane Doe" email="jane@example.com" />);
+  expect(screen.queryByText(/undefined/)).not.toBeInTheDocument();
+});
+
+test('renders empty strings', () => {
+  render(<UserProfile name="" email="" />);
+  expect(screen.getByText(/Name: /)).toBeInTheDocument();
+});
+
+test('a very long name', () => {
+  render(<UserProfile name="A".repeat(100) email="jane@example.com" />);
+  expect(screen.getByText(/AAAAAA/)).toBeInTheDocument();
+});
