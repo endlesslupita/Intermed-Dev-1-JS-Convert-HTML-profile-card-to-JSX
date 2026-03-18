@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import UserProfile from './UserProfile.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +11,12 @@ function App() {
   return (
     <>
       <section id="center">
+        <div>
+          <h1>New Test Code</h1>
+          <p>
+          <UserProfile name='Jane Doe' email='jane@example.com'/>
+          </p>
+        </div>
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
