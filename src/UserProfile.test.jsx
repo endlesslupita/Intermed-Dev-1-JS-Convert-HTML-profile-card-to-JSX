@@ -18,7 +18,7 @@ test('checks the link href attribute', () => {
 expect(screen.getByRole('link')).toHaveAttribute('href', 'mailto:jane@example.com');
 });
 
-test('a UserProfile without props', () => {
+test('does not render the word undefined', () => {
   render(<UserProfile name="Jane Doe" email="jane@example.com" />);
   expect(screen.queryByText(/undefined/)).not.toBeInTheDocument();
 });
