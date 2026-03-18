@@ -16,3 +16,4 @@ test('renders the email prop', () => {
 test('checks the link href attribute', () => {
   render(<UserProfile name="Jane Doe" email="jane@example.com" />);
 expect(screen.getByRole('link')).toHaveAttribute('href', 'mailto:jane@example.com');
+});
