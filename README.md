@@ -1,3 +1,50 @@
+# UserProfile React Component
+
+## Project Description
+
+This project converts an HTML profile card snippet into a reusable React JSX component called `UserProfile`. The component accepts `name` and `email` as props and renders a profile card with a photo, name, email, and a mailto link.
+
+## How to Run
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v18 or higher
+
+### Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+4. Open the Local URL shown in the terminal (e.g., `http://localhost:5173`) in your browser.
+
+### Run Tests
+
+```
+npm test
+```
+
+## Test Cases
+
+### Normal Tests
+
+1. **Renders the name prop** — Renders the component with a name and email, and confirms the name appears in the document.
+2. **Renders the email prop** — Renders the component with a name and email, and confirms the email address appears in the document.
+3. **Checks the link href attribute** — Confirms the mailto link has the correct `href` value using the email prop (e.g., `mailto:jane@example.com`).
+
+### Edge Case Tests
+
+4. **Does not render the word "undefined"** — Confirms that the component does not display the literal text "undefined" when props are provided, guarding against broken prop interpolation.
+5. **Renders empty strings** — Passes empty strings for name and email, and confirms the component still renders the "Name:" label without crashing.
+6. **Renders a very long name** — Passes a 100-character string as the name prop and confirms the component renders it without error.
+
+---
+
 # Assignment: Converting HTML Profile Card to JSX
 
 ## Objective
