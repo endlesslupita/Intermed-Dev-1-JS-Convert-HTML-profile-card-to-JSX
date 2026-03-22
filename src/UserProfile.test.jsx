@@ -25,10 +25,10 @@ test('does not render the word undefined', () => {
 
 test('renders empty strings', () => {
   render(<UserProfile name="" email="" />);
-  expect(screen.getByText(/Name: /)).toBeInTheDocument();
+  expect(screen.getByText(/Name:/)).toBeInTheDocument();
 });
 
 test('a very long name', () => {
-  render(<UserProfile name="A".repeat(100) email="jane@example.com" />);
+  render(<UserProfile name={"A".repeat(100)} email="jane@example.com" />);
   expect(screen.getByText(/AAAAAA/)).toBeInTheDocument();
 });
